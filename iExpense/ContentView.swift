@@ -60,6 +60,8 @@ struct ContentView: View {
                             Text(item.amount, format: .currency(code: item.currencyCode))
                         }
                         .foregroundColor(item.amount >= 100 ? .red : item.amount < 10 ? .green : .blue)
+                        .accessibilityLabel("\(item.name) amount: \(item.amount) \(item.currencyCode)")
+                        .accessibilityHint(Text("Personal Expense"))
                     }
                     .onDelete(perform: removePersonal)
                 }
